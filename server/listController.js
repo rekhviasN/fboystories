@@ -16,13 +16,20 @@ module.exports = {
 		  });
 	},
 
-	newStory: function(req, res, next){
+	postTo: function(req, res, next){
 		if(req.body.story){
 			var newStory = {
 				story: req.body.story,
 				upVotes: 0,
 				date: new Date(),
 				location: req.body.location
+			}else{
+				var newStory = { 
+					story: "meoooww",
+					upVotes: 0,
+					date: new Date(),
+					location: "wudduuup"
+				}
 			};
 			createStory(newStory);
 		}
