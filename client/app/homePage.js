@@ -10,11 +10,12 @@ angular.module('fboystories.scopeControl', [])
       };
 
       $scope.getStories();
-
+      
       $scope.addStory = function(){
           httpFactory.addOne($scope.inputStory)
                .then(function(resp){
                   console.log(resp);
+
                   $scope.getStories();
               });
       
