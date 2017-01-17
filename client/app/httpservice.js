@@ -12,12 +12,11 @@
     });
   };
 
-  var addOne = function (story ) {
+  var addOne = function (story) {
     return $http({
       method: 'POST',
       url: '/api/postto',
-      data: { story : story,
-              location : "NYC" }
+      data: { story: story }
     });
   };
 

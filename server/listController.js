@@ -17,18 +17,16 @@ module.exports = {
 	},
 
 	postTo: function(req, res){
-		console.log("in post to")
-		console.log(req.body)
 		var newStory;
 
 		if(req.body.story){
 			newStory = {
 				story: req.body.story,
 				upVotes: 0,
-				location: req.body.location
+				location: "nyc"
 			};
 		}
-
+		console.log("newstory: " , newStory)
 		 createStory(newStory);
 			res.send("good job!");
 		}
