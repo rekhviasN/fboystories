@@ -15,12 +15,21 @@ angular.module('fboystories.scopeControl', [])
           httpFactory.addOne($scope.inputStory)
                .then(function(resp){
                   console.log(resp);
-
                   $scope.getStories();
               });
       
       };
 
+      $scope.upVote = function(id){
+        console.log(id)
+          httpFactory.updateVotes(id)
+               .then(function(resp){
+                  console.log(resp);
+
+                  $scope.getStories();
+              });
+      
+      }
     });  
 
 

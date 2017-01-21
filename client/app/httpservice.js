@@ -20,9 +20,18 @@
     });
   };
 
+  var updateVotes= function(id){
+    return $http({
+      method: 'POST',
+      url: '/api/addVote',
+      data: { id : id }
+    });
+  };
+
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    updateVotes: updateVotes
   };
 
 });

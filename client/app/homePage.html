@@ -4,11 +4,13 @@
 		<input type = "text" ng-model = "inputStory" placeholder="..."/>
 		<input type="submit" />
 	</form>
-	 <div ng-repeat="stories in data.data.data.slice().reverse()">
+	 <div ng-repeat="stories in data.data.data | orderBy: ['-upVotes']">
 	        <p><em>the lowdown:</em> <br />{{ stories.story }}</p>
 	        <p>{{ stories.createdDate }}</p>
-	        <p>{{ stories.upVotes }}
-	        <button> vote </button></p>	        
+	        <p>{{ stories.upVotes }} </p>
+	   <!--    	<p ng-model="storiesId">{{stories._id}} </p> -->
+	        <button ng-click="upVote(stories._id)">vote</button>
+	        
 	        <p>{{ stories.location}}</p>
 	        <br />
 	 </div>
