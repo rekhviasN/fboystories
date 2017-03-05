@@ -16,25 +16,22 @@ module.exports = {
 		  });
 	},
 
-	postTo: function(req, res, next){
+	postTo: function(req, res){
+		console.log("in post to")
+		console.log(req.body)
+		var newStory;
+
 		if(req.body.story){
-			var newStory = {
+			newStory = {
 				story: req.body.story,
 				upVotes: 0,
-				date: new Date(),
 				location: req.body.location
-			}else{
-				var newStory = { 
-					story: "meoooww",
-					upVotes: 0,
-					date: new Date(),
-					location: "wudduuup"
-				}
 			};
-			createStory(newStory);
 		}
-		.fail(function(error){
-			next(error);
-		})
-	}
-}; 
+
+		 createStory(newStory);
+			res.send("good job!");
+		}
+		
+		
+};

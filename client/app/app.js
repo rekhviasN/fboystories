@@ -1,15 +1,13 @@
-angular.module('shortly', [
-  'ngRoute'
+angular.module('fboystories', [ 
+	'fboystories.scopeControl', 
+	'fboystories.httpModule',
+  	'ngRoute'
 ])
 .config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'app/homePage.html',
-      controller: 'homePageController'
-    })
-    .when('/top', {
-      templateUrl: 'app/topPage.html',
-      controller: 'topPageController'
+      controller: 'storyController'
     });
 
 });

@@ -1,9 +1,8 @@
-var list = require('/listController')
+var list = require('./listController.js')
 
 module.exports = function(app, express) {
 
-	app.get('/api/createdAt', list.createdAt);
-	app.post('/api/postTo', list.postTo);
-	app.get('/api/createdAt', list.topPosts);
+	app.get('/api/createdAt/', list.allStories);
+	app.post('/api/postto/', list.postTo);
 	
-}
+};

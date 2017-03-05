@@ -1,1 +1,14 @@
-homePage.html
+<div>
+	
+	<div>Tell me, huney</div>
+	<input ng-model = "inputStory" type= "text" placeholder="..."/>
+	<button ng-click="$scope.addStory($scope.inputStory)">Submit</button>
+	 <div ng-repeat="stories in data.data">
+	        <p>the lowdown: {{ stories.story }}</p>
+	        <p>{{ stories.createdDate }}</p>
+	        <p>votes: {{ stories.upVotes }}</p>
+	        <button> ^ vote </button>	        
+	        <p>{{ stories.location}}</p>
+	        <br />
+	 </div>
+<div>
