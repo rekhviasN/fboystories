@@ -9,5 +9,4 @@ angular.module('fboystories', [
       templateUrl: 'app/homePage.html',
       controller: 'storyController'
     });
-
 });
